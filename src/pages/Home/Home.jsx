@@ -8,6 +8,7 @@ import "./Home.css";
 export default function Home({ movie, series }) {
   const navigate = useNavigate();
   return (
+    <>
     <div className="homebtns">
       <Carousel
         className="carousel"
@@ -35,7 +36,7 @@ export default function Home({ movie, series }) {
         showThumbs={false}
         infiniteLoop={true}
         autoPlay={true}
-        interval={1000}
+        interval={1500}
         showStatus={false}
         onClickItem={(index) => navigate(`/tv`)}
       >
@@ -52,5 +53,8 @@ export default function Home({ movie, series }) {
         })}
       </Carousel>
     </div>
+    <div className="TopContainer">
+    </div>
+    </>
   );
 }

@@ -6,6 +6,7 @@
     color: white;
     padding: 0 20px;
     display: flex;
+    
     justify-content: space-around;
     align-items: center;
     height: 10vh;
@@ -65,10 +66,12 @@
 .search{
   padding: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .search input{
   width: 200px;
-  height: 39px;
+  height: 35px;
   border-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -92,7 +95,7 @@
 }
 .search button{
   width: 40px;
-  height: 44px;
+  height: 41.5px;
   border-radius: 5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

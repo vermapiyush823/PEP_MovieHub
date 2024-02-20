@@ -7,6 +7,7 @@ import Pagination from './components/Pagination/Pagination'
 import Tvlist from './pages/TvList/Tvlist'
 import FavMovie from './pages/FavMovie/FavMovie'
 import FavTv from './pages/FavTv/FavTv'
+import BigView from './pages/BigView/BigView';
 
 
 
@@ -33,7 +34,7 @@ export default function App() {
       const reponse = await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=8291c0a5a15c99a6e3e31dc92e38eefa&language=en-US&page=${page}`);
       const result = await reponse.json()
       setSeries(result.results);
-      setTotalMoviePages(result.total_pages);
+      setTotalSeriesPages(result.total_pages)
 
     } catch (error) {
       console.log("error", error)
@@ -74,7 +75,7 @@ export default function App() {
     <div>
 
       <BrowserRouter>
-        <Navbar onSearch={handleMovieSearch} />
+        <Navbar onMovieSearch={handleMovieSearch} onTvSearch={handleTvSearch} />
         <Routes>
           <Route path='/' element={<Home movie={movies} series={series} />} />
           <Route path="/movie" element={<div>
@@ -84,6 +85,8 @@ export default function App() {
           <Route path='/favmov' element={<FavMovie />} />
           <Route path='tv' element={<Tvlist series={series} />} />
           <Route path='/favTv' element={<FavTv />} />
+          <Route path='/tv/:id' element={<BigView />} />
+          <Route path='/movies/:id' element={<BigView />} />
         </Routes>
       </BrowserRouter>
     </div>

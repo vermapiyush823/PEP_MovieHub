@@ -41,7 +41,7 @@ export default function Home({ movie, series }) {
         showIndicators={false}
         infiniteLoop={true}
         autoPlay={true}
-        interval={1000}
+        interval={1500}
         showStatus={false}
         onClickItem={(index) => navigate(`/tv`)}
       >
@@ -58,37 +58,5 @@ export default function Home({ movie, series }) {
         })}
       </Carousel>
     </div>
-    <div className="recommendation">
-      <h1 className="rec-heading">Recommendation</h1>
-      <div className="rec-movies rec">
-        <h1> Movies</h1>
-        {movieLimit.map((movie, index) => {
-          return (
-            <div key={index} className="card">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                onClick={() => navigate(`/movie/${movie.id}`)}
-              />
-            </div>
-          );
-        })}
-    </div>
-    <div className="rec-series rec">
-      <h1 className="rec-series-heading">TV Shows</h1>
-      {seriesLimit.map((series, index) => {
-        return (
-          <div key={index} className="card">
-            <img
-              src={`https://image.tmdb.org/t/p/w500${series.poster_path}`}
-              alt={series.name}
-              onClick={() => navigate(`/tv/${serie.id}`)}
-            />
-          </div>
-        );
-      })}
-    </div>
-    </div>
-    </>
   );
 }
